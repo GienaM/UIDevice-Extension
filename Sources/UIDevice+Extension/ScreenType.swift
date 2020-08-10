@@ -1,3 +1,5 @@
+import UIKit
+
 public enum ScreenType {
     case iPhones_4_4S
     case iPhones_5_5s_5c_SE
