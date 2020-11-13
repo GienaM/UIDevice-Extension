@@ -10,7 +10,9 @@ public enum ScreenSize {
     case iPhone_XSMax
     case unknown
 
-    var height: CGFloat {
+    // MARK: - Public properties
+
+    public var height: CGFloat {
         switch self {
         case .iPhones_4_4S:
             return 960
@@ -31,7 +33,7 @@ public enum ScreenSize {
         }
     }
 
-    var has9To16Ratio: Bool {
+    public var has9To16Ratio: Bool {
         let roundingBehavior = NSDecimalNumberHandler(
             roundingMode: .plain,
             scale: 2,
@@ -47,6 +49,8 @@ public enum ScreenSize {
 
         return roundedScreenRatio == _9To16Ratio
     }
+
+    // MARK: - Initialization
 
     public init(screenHeight: CGFloat = UIScreen.main.nativeBounds.height) {
         switch screenHeight {
