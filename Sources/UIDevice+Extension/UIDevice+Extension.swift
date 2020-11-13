@@ -10,10 +10,10 @@ public extension UIDevice {
     }
 
     var isSmallDevice: Bool {
-        return [.iPhones_4_4S, .iPhones_5_5s_5c_SE].contains(screenType)
+        return screenSize.height < ScreenSize.iPhones_5_5s_5c_SE.height
     }
 
-    var screenType: ScreenType {
-        return ScreenType()
+    var screenSize: ScreenSize {
+        return ScreenSize()
     }
 }
