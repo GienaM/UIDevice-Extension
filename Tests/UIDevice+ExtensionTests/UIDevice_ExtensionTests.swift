@@ -1,7 +1,7 @@
 import XCTest
 @testable import UIDevice_Extension
 
-final class UIDevice_ExtensionTests: XCTestCase {
+private final class UIDevice_ExtensionTests: XCTestCase {
     func testHas9To16Ratio() {
         let screenSize = UIDevice.current.screenSize
         if [.iPhones_5_5s_5c_SE,
@@ -10,6 +10,15 @@ final class UIDevice_ExtensionTests: XCTestCase {
             XCTAssertTrue(screenSize.has9To16Ratio)
         } else {
             XCTAssertFalse(screenSize.has9To16Ratio)
+        }
+    }
+
+    func testIsSmallDevice() {
+        let screenSize = UIDevice.current.screenSize
+        if [.iPhones_4_4S, .iPhones_5_5s_5c_SE].contains(screenSize) {
+            XCTAssertTrue(UIDevice.current.isSmallDevice)
+        } else {
+            XCTAssertFalse(UIDevice.current.isSmallDevice)
         }
     }
 }
