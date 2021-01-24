@@ -10,7 +10,7 @@ public extension UIDevice {
     }
 
     var isSmallDevice: Bool {
-        return screenSize.height <= ScreenSize.iPhones_5_5s_5c_SE.height
+        return screenSize.height <= ScreenSize.iPhones_5_5s_5c_SE1.height
     }
 
     var screenSize: ScreenSize {
