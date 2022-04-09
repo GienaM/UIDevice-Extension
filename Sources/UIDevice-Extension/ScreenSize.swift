@@ -88,3 +88,15 @@ public enum ScreenSize {
         }
     }
 }
+
+// MARK: - Comparable
+
+extension ScreenSize: Comparable {
+    public static func < (lhs: ScreenSize, rhs: ScreenSize) -> Bool {
+        return lhs.height < rhs.height
+    }
+
+    public static func == (lhs: ScreenSize, rhs: ScreenSize) -> Bool {
+        return lhs.height == rhs.height
+    }
+}

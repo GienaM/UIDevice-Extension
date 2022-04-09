@@ -21,4 +21,11 @@ private final class UIDevice_ExtensionTests: XCTestCase {
             XCTAssertFalse(UIDevice.current.isSmallDevice)
         }
     }
+
+    func testScreenSizeComparable() {
+        XCTAssertTrue(ScreenSize.iPhone_12Mini == .iPhone_12Mini)
+        XCTAssertTrue(ScreenSize.iPhone_12_12Pro != .iPhone_XSMax_11ProMax)
+        XCTAssertTrue(ScreenSize.iPhone_12_12Pro > .iPhones_6_6s_7_8_SE2)
+        XCTAssertTrue(ScreenSize.iPhones_5_5s_5c_SE1 < .iPhones_6_6s_7_8_SE2)
+    }
 }
